@@ -75,9 +75,11 @@ def filter_plays(games, params):
             continue
         plays = r.json()['plays']
         for play in plays:
-            if (play['pass_route_target'] is not None):
+            if (play['pass_route_target_group'] == '7R'
+                and play['pass_receiver_target_position'] != None):
                 if("HB" in play['pass_receiver_target_position']):
-                    play_ids.append([play['play_id'],play['pass_route_target']])
+                    print(play['play_id'])
+                    play_ids.append([play['play_id'],play['pass_route_target_group']])
 
     return play_ids
 

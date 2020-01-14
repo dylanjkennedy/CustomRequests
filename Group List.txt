@@ -1,0 +1,3 @@
+NCAA: {'MAC West', 'FBS', 'SEC', 'Pac-12', 'SWAC West', 'C-USA East', 'MEAC', 'Ivy', 'Big Ten West', 'Missouri Valley', 'SWAC', 'The American East', 'MWC West', 'The American', 'The American West', 'Southern', 'Big Sky', 'C-USA West', 'MWC', 'Big Ten', 'Power Five', 'SEC West', 'MAC East', 'SEC East', 'ACC Atlantic', 'ACC Coastal', 'Big South', 'Ohio Valley', 'CAA', 'Patriot', 'IND (FBS)', 'FCS', 'Group of Five', 'Pac-12 North', 'Northeast', 'Pioneer', 'MAC', 'Big Ten East', 'Southland', 'Big 12', 'C-USA', 'Sun Belt', 'Pac-12 South', 'SWAC East', 'MWC Mountain', 'ACC'}
+
+NFL: {'AFC West', 'NFC West', 'NFC', 'AFC East', 'AFC North', 'NFC East', 'NFC North', 'AFC', 'AFC South', 'NFC South'}

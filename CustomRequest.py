@@ -58,7 +58,7 @@ def get_games (opponents, params):
 
     for game in possible_games:
         if game['away_team'] in opponents or game['home_team'] in opponents:
-            if game['season'] >= 2010:
+            if game['season'] == 2019:
                 games.append(str(game['id']))
     return games
 
@@ -72,14 +72,18 @@ def filter_plays(games, params):
                          +game+'/plays', headers = params)
 
         if 'plays' not in r.json().keys():
+            r = requests.get('https://api.profootballfocus.com/v1/video/nfl/games/'
+                         +game+'/plays', headers = params)
+        
+        if 'plays' not in r.json().keys():
             continue
         plays = r.json()['plays']
         for play in plays:
-            if (play['pass_route_target_group'] == '7R'
+            if ((play['pass_route_target_group'] in ['7R','H7'])
                 and play['pass_receiver_target_position'] != None):
-                if("HB" in play['pass_receiver_target_position']):
-                    print(play['play_id'])
-                    play_ids.append([play['play_id'],play['pass_route_target_group']])
+                if('HB' in play['pass_receiver_target_position']):
+                    print(play['play_id'], play['defense'])
+                    play_ids.append([play['play_id'],play['pass_route_target_group'],play['pass_route_target']])
 
     return play_ids
 
